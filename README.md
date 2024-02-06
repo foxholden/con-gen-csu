@@ -564,7 +564,9 @@ the `fastp` aligner.
     cd INTO_YOUR_CSU_CON_GEN_DIRECTORY
     
     mkdir -p results/trimmed results/qc/fastp
-    fastp ALL_THE_OPTIONS_YOU_FIGURED_OUT_IN_THE_TEAM_QUIZ  
+    fastp -i R1.fq.gz -I R2.fq.gz -o R1.trim.fq.gz -O R2.trim.fq.gz -q 20 -r -W 4 \
+       --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT
+  
   ```
 - Transferring files from the cluster to your laptop.  In order to
   view the html report from fastp, we can bring it to our laptop.  How?
